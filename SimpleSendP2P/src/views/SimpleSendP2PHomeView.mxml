@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:View xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		xmlns:s="library://ns.adobe.com/flex/spark" title="HomeView"
+		creationComplete="init(event)">
+	<fx:Declarations>
+		<!-- 非ビジュアルエレメント (サービス、値オブジェクトなど) をここに配置 -->
+	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+			import com.reyco1.multiuser.DirectLanConnection;
+			import com.reyco1.multiuser.debug.Logger;
+			
+			import mx.events.FlexEvent;
+			
+			import spark.events.TextOperationEvent;
+			public var dlc:DirectLanConnection;
+			
+			protected function init(event:FlexEvent):void
+			{
+				connectBtn.addEventListener(MouseEvent.CLICK,initConnect);
+				sendBtn.addEventListener(MouseEvent.CLICK,sendData);
+				Logger.LEVEL = Logger.ALL_BUT_NET_STATUS;
+			}
+			public function initConnect(event:MouseEvent):void {
+				
+				dlc = new DirectLanConnection();
+				dlc.onDataRecieve = handleData;
+				dlc.onConnect = handleConnect;
+				
+				if(con_txt.text !=null || con_txt.text.length>0){
+					dlc.connect(con_txt.text);
+				}else{
+					dlc.connect();
+				}
+				dataTxt.addEventListener(TextEvent.TEXT_INPUT,sendData);
+				dataTxt.addEventListener(TextOperationEvent.CHANGE,sendData);
+				connectBtn.addEventListener(MouseEvent.CLICK,sendData);
+			}
+			
+			public function handleConnect(data:Object):void{
+				Logger.log("connected with id: " + dlc.port, this);
+				logTxt.text= "connected with id: " + dlc.port;
+			}
+			
+			private function handleData(data:Object):void {
+				Logger.log("type: " + data.type + ", value: " + data.value, this);
+				logTxt.text +="handleData call" + "type: " + data.type + ", value: " + data.value + "\n";
+			}
+			//Object北川景子ちゃんrecieverText
+			public function sendData(object:Object):void{
+				logTxt.text+=object.type + dataTxt.text;
+				dlc.sendData({type:  "textoo",value: dataTxt.text});
+			}		
+		]]>
+	</fx:Script>
+	<s:Button x="318" y="10" id="connectBtn" label="接続"/>
+	<s:TextInput id="con_txt" x="10" y="20"/>
+	<s:TextInput id="dataTxt" text="北川景子" x="10" y="61"/>
+	<s:Button id="sendBtn"  x="318" y="61" label="送信"/>
+	<s:TextArea id="logTxt" x="10" y="102" height="162"/>
+</s:View>

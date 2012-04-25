@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<fxpProperties abbreviated="false" authoringTool="Flex Builder" compiles="true" parentProject="99659d09-e152-4b41-beb5-a005cb428ac1" projectUUID="99659d09-e152-4b41-beb5-a005cb428ac1" pureCatalystProject="false" sdkVersion="4.6.0" uuid="b1adedc0-7c4b-4f56-b5d0-3e17b8e96b4e" version="15">
+  <projects>
+    <project filename="multiuser.fxpl" position="2" projectUUID="254d4743-ea0a-4436-8146-cbf78db00811" uuid="b1adedc0-7c4b-4f56-b5d0-3e17b8e96b4e"/>
+  </projects>
+  <src/>
+  <swc>
+    <linked location="sdkPlaceHolder" path="sdkPlaceHolder" position="0" uuid="b1adedc0-7c4b-4f56-b5d0-3e17b8e96b4e"/>
+    <linked location="C:/Users/jfuna.NEETEC-CO-JP/Adobe Flash Builder 4.6/Simple2P2/libs" path="/libs" position="1" uuid="b1adedc0-7c4b-4f56-b5d0-3e17b8e96b4e"/>
+    <linked location="${BLACKBERRY_TABLET_SDK}/frameworks/libs/air/qnx-air.swc" path="${BLACKBERRY_TABLET_SDK}/frameworks/libs/air/qnx-air.swc" position="3" uuid="b1adedc0-7c4b-4f56-b5d0-3e17b8e96b4e"/>
+    <linked location="${BLACKBERRY_TABLET_SDK}/frameworks/libs/qnx" path="${BLACKBERRY_TABLET_SDK}/frameworks/libs/qnx" position="4" uuid="b1adedc0-7c4b-4f56-b5d0-3e17b8e96b4e"/>
+    <linked location="${BLACKBERRY_TABLET_SDK}/frameworks/libs/blackberry" path="${BLACKBERRY_TABLET_SDK}/frameworks/libs/blackberry" position="5" uuid="b1adedc0-7c4b-4f56-b5d0-3e17b8e96b4e"/>
+  </swc>
+  <misc/>
+  <theme/>
+  <mxmlFormattingPrefs groupAttributesByState="true" maxLineWidth="100" mxmlAlignAttributes="true" mxmlAttributeOrder="id,userLabel,includeIn,excludeFrom,visible,x,y,z,left,right,top,bottom,width,height,minWidth,minHeight,maxWidth,maxHeight,label" mxmlKeepAttributeValuesOrganized="true"/>
+</fxpProperties>

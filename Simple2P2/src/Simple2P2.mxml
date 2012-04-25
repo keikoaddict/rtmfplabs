@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" applicationDPI="160"
+			   creationComplete="init(event)">
+	<fx:Declarations>
+		<!-- 非ビジュアルエレメント (サービス、値オブジェクトなど) をここに配置 -->
+	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+			import com.reyco1.multiuser.DirectLanConnection;
+			import com.reyco1.multiuser.debug.Logger;
+			
+			import mx.events.FlexEvent;
+			
+			public var dlc:DirectLanConnection;
+			
+			protected function init(event:FlexEvent):void
+			{
+				dlc = new DirectLanConnection();
+				dlc.onDataRecieve = handleData;
+				dlc.onConnect = handleConnect;
+				dlc.connect();
+				Logger.LEVEL = Logger.ALL_BUT_NET_STATUS;
+			}
+			
+			private function handleConnect(data:Object):void
+			{
+				Logger.log("connected with id: " + dlc.port, this);
+				recieveTxt.text="connected with id: " + dlc.port;
+				
+			}
+			
+			private function handleData(data:Object):void
+			{
+				Logger.log("type: " + data.type + ", value: " + data.value, this);
+				recieveTxt.text=data.value;
+				Clipboard.generalClipboard.setData(ClipboardFormats.TEXT_FORMAT,data.value);
+			}
+			
+			protected function button1_clickHandler(event:MouseEvent):void {
+				sendBtn.label="click";
+				var u:URLRequest = new URLRequest("http://www.google.co.jp/#hl=ja&gs_nf=1&gs_is=1&cp=3&gs_id=49&xhr=t&q=" + escapeMultiByte(recieveTxt.text) + "&pf=p&output=search&sclient=psy-ab&oq=" + escapeMultiByte("きた") + "g&aq=0r&aqi=g-r4&aql=&gs_l=&pbx=1&bav=on.2,or.r_gc.r_pw.r_cp.r_qf.,cf.osb&fp=53cf969f649c3278");
+				navigateToURL(u);
+			}
+			
+			
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+	</fx:Declarations>
+	<s:TextArea id="recieveTxt" x="10" y="10"/>
+	<s:Button id="sendBtn" x="319" y="10" label="send" click="button1_clickHandler(event)"/>
+</s:Application>
