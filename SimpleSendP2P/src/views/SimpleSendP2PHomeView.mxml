@@ -46,7 +46,7 @@
 				Logger.log("type: " + data.type + ", value: " + data.value, this);
 				logTxt.text +="handleData call" + "type: " + data.type + ", value: " + data.value + "\n";
 			}
-			//Object北川景子ちゃんrecieverText
+			
 			public function sendData(object:Object):void{
 				logTxt.text+=object.type + dataTxt.text;
 				dlc.sendData({type:  "textoo",value: dataTxt.text});
