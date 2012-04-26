@@ -28,7 +28,7 @@
         </excludedEntries>
       </libraryPathEntry>
       <libraryPathEntry kind="1" linkType="1" path="libs"/>
-      <libraryPathEntry kind="3" linkType="1" path="/multiuser_2/bin/multiuser_2.swc" useDefaultLinkType="false"/>
+      <libraryPathEntry kind="3" linkType="1" path="/multiuser/bin/multiuser.swc" useDefaultLinkType="false"/>
     </libraryPath>
     <sourceAttachmentPath/>
   </compiler>

@@ -28,7 +28,7 @@
         </excludedEntries>
       </libraryPathEntry>
       <libraryPathEntry kind="1" linkType="1" path="libs"/>
-      <libraryPathEntry kind="3" linkType="1" path="/multiuser_1/bin/multiuser_1.swc" useDefaultLinkType="false"/>
+      <libraryPathEntry kind="3" linkType="1" path="/multiuser/bin/multiuser.swc" useDefaultLinkType="false"/>
       <libraryPathEntry kind="3" linkType="2" path="${BLACKBERRY_TABLET_SDK}//frameworks/libs/air/qnx-air.swc" useDefaultLinkType="false"/>
       <libraryPathEntry kind="1" linkType="1" path="${BLACKBERRY_TABLET_SDK}//frameworks/libs/qnx"/>
       <libraryPathEntry kind="1" linkType="1" path="${BLACKBERRY_TABLET_SDK}//frameworks/libs/blackberry"/>
