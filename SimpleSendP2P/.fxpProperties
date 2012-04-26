@@ -6,7 +6,7 @@
   <src/>
   <swc>
     <linked location="sdkPlaceHolder" path="sdkPlaceHolder" position="0" uuid="b1adedc0-7c4b-4f56-b5d0-3e17b8e96b4e"/>
-    <linked location="C:/Users/jfuna.NEETEC-CO-JP/Adobe Flash Builder 4.6/SimpleSendP2P/libs" path="/libs" position="1" uuid="b1adedc0-7c4b-4f56-b5d0-3e17b8e96b4e"/>
+    <linked location="${DOCUMENTS}/SimpleSendP2P/libs" path="/libs" position="1" uuid="b1adedc0-7c4b-4f56-b5d0-3e17b8e96b4e"/>
   </swc>
   <misc/>
   <theme/>
